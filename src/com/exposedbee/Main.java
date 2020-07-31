@@ -11,6 +11,7 @@ public class Main {
     public static void main(String[] args) throws SQLException, IOException, InterruptedException {
         createDatabase c = new createDatabase();
         c.create();
+//        Runtime.getRuntime().exec("cls");
         mainMenu.mainMenuStart(true);
 
     }

@@ -25,12 +25,17 @@ public class menu extends MenuTopics {
     }
 
     public static int mainMenuDisplay(){
-        System.out.println(" > Main Menu > Edit Menu");
-        System.out.println("\t[1] Topics");
-        System.out.println("\t[2] Questions");
+        try {
+            System.out.println(" > Main Menu > Edit Menu");
+            System.out.println("\t[1] Topics");
+            System.out.println("\t[2] Questions");
 //        System.out.println("\t[3] Add new Questions");
-        System.out.println("[0] main Menu");
-        System.out.print("Enter your Choice:");
-        return new Scanner(System.in).nextInt();
+            System.out.println("[0] main Menu");
+            System.out.print("Enter your Choice:");
+            return new Scanner(System.in).nextInt();
+        }
+        catch (Exception s){
+            return 10;
+        }
     }
 }

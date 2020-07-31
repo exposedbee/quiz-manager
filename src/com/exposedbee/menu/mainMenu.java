@@ -100,15 +100,20 @@ public class mainMenu extends menu {
 
 
     public static int mainMenuDisplay() {
-        System.out.println(" > Main Menu");
-        System.out.println("\t[1] Edit Questions and Topics");
-        System.out.println("\t[2] Create new Quiz");
-        System.out.println("\t[3] Delete quiz");
-        System.out.println("\t[4] Play Quiz");
-        System.out.println("\t[5] Quiz to file");
-        System.out.println("\t[6] Quit");
-        System.out.print("Enter your Choice:");
-        return new Scanner(System.in).nextInt();
+        try {
+            System.out.println(" > Main Menu");
+            System.out.println("\t[1] Edit Questions and Topics");
+            System.out.println("\t[2] Create new Quiz");
+            System.out.println("\t[3] Delete quiz");
+            System.out.println("\t[4] Play Quiz");
+            System.out.println("\t[5] Quiz to file");
+            System.out.println("\t[6] Quit");
+            System.out.print("Enter your Choice:");
+            return new Scanner(System.in).nextInt();
+        }
+        catch (Exception s){
+            return 10;
+        }
     }
 
 }

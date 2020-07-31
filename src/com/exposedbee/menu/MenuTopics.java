@@ -47,13 +47,18 @@ public class MenuTopics {
     }
 
     public static int mainMenuDisplay(){
-        System.out.println(" > Main Menu > Edit Menu > Topics");
-        System.out.println("\t[1] Add Topics");
-        System.out.println("\t[2] Remove Topics");
+        try {
+            System.out.println(" > Main Menu > Edit Menu > Topics");
+            System.out.println("\t[1] Add Topics");
+            System.out.println("\t[2] Remove Topics");
 //        System.out.println("\t[3] Rename Topics");
-        System.out.println("[0] Edit Menu");
-        System.out.print("Enter your Choice:");
-        return new Scanner(System.in).nextInt();
+            System.out.println("[0] Edit Menu");
+            System.out.print("Enter your Choice:");
+            return new Scanner(System.in).nextInt();
+        }
+        catch (Exception e){
+            return 10;
+        }
     }
 
 }

@@ -12,7 +12,7 @@ public class createDatabase {
 
         }
         catch (SQLException se){
-            System.out.print(se);
+//            System.out.print(se);
         }
         try {
             PreparedStatement statement = connection.prepareStatement("CREATE TABLE quizs (slno int AUTO_INCREMENT, name varchar(255) NOT NULL, PRIMARY KEY(slno))");
@@ -21,7 +21,7 @@ public class createDatabase {
 
         }
         catch (SQLException se){
-            System.out.print(se);
+//            System.out.print(se);
         }
         try {
             PreparedStatement statement;
@@ -31,7 +31,7 @@ public class createDatabase {
 
         }
         catch (SQLException se){
-            System.out.print(se);
+//            System.out.print(se);
         }
     }
 }

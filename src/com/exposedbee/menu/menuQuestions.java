@@ -36,12 +36,17 @@ public class menuQuestions extends questionsEdit {
     }
 
     public static int mainMenuDisplay() {
-        System.out.println(" > Main Menu > Edit Menu > Questions");
-        System.out.println("\t[1] View and edit Questions");
-        System.out.println("\t[2] Add new Questions");
+        try {
+            System.out.println(" > Main Menu > Edit Menu > Questions");
+            System.out.println("\t[1] View and edit Questions");
+            System.out.println("\t[2] Add new Questions");
 //        System.out.println("\t[3] Delete all questions");
-        System.out.println("[0] Edit Menu");
-        System.out.print("Enter your Choice:");
-        return new Scanner(System.in).nextInt();
+            System.out.println("[0] Edit Menu");
+            System.out.print("Enter your Choice:");
+            return new Scanner(System.in).nextInt();
+        }
+        catch (Exception e){
+            return 10;
+        }
     }
 }
