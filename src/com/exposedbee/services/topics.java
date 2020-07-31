@@ -21,7 +21,7 @@ public class topics {
 
         PreparedStatement statement;
         statement = connection.prepareStatement("INSERT INTO topics(name) VALUES('" + getNewTopic() + "')");
-        int rs = statement.executeUpdate();
+        statement.executeUpdate();
         System.out.println("New Topic added");
 
 
@@ -39,11 +39,11 @@ public class topics {
             System.out.println("Topic removed");
             Thread.sleep(2000);
             statement = connection.prepareStatement("DELETE FROM questions WHERE topic=" + topic);
-            statement.executeUpdate();
+            int r=statement.executeUpdate();
         }
         catch (SQLException se){
-            System.out.println("Topic could not be removed(pls try again later)");
-            Thread.sleep(2000);
+//            System.out.println("Topic could not be removed(pls try again later)");
+//            Thread.sleep(2000);
         }
 
     }

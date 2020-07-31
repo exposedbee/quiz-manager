@@ -2,7 +2,7 @@ package com.exposedbee.services;
 
 import java.sql.*;
 
-public class quiz {
+class quiz {
 
     private String newQuiz;
 
@@ -22,7 +22,7 @@ public class quiz {
         PreparedStatement statement;
         statement = connection.prepareStatement("INSERT INTO quizs(name) VALUES('" + getNewTopic() + "')");
         statement.executeUpdate();
-        System.out.println("New Topic added");
+        System.out.println("New Quiz added");
         Thread.sleep(1000);
 
 
@@ -36,7 +36,7 @@ public class quiz {
 
         PreparedStatement statement;
         statement = connection.prepareStatement("DELETE FROM quizs WHERE name='" + topic + "'");
-        int rs = statement.executeUpdate();
+        statement.executeUpdate();
     }
 
 

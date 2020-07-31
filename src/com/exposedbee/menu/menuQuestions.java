@@ -6,10 +6,10 @@ import com.exposedbee.services.questionsEdit;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class menuQuestions extends questionsEdit {
+class menuQuestions extends questionsEdit {
     public void editMenuQuestionsMain(boolean event) throws SQLException, InterruptedException {
 //        questions[] q1=new questions[];
-        String temp = null;
+        String temp;
         quizTopicHolder hold1 = new quizTopicHolder();
         do {
 
@@ -35,7 +35,7 @@ public class menuQuestions extends questionsEdit {
         } while (event);
     }
 
-    public static int mainMenuDisplay() {
+    private static int mainMenuDisplay() {
         try {
             System.out.println(" > Main Menu > Edit Menu > Questions");
             System.out.println("\t[1] View and edit Questions");

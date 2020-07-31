@@ -32,7 +32,7 @@ public class quizTracker {
         return null;
     }
 
-    public void setQuiz() throws SQLException, InterruptedException {
+    private void setQuiz() throws SQLException, InterruptedException {
 
         var connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "");
         try {

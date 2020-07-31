@@ -6,7 +6,7 @@ import com.exposedbee.services.topics;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class MenuTopics {
+class MenuTopics {
     public static void editMenuTopicsMain(boolean event) throws SQLException, InterruptedException {
         topics t1=new topics();
         String temp=null;
@@ -46,7 +46,7 @@ public class MenuTopics {
         }while (event);
     }
 
-    public static int mainMenuDisplay(){
+    private static int mainMenuDisplay(){
         try {
             System.out.println(" > Main Menu > Edit Menu > Topics");
             System.out.println("\t[1] Add Topics");

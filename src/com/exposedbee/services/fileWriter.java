@@ -64,7 +64,7 @@ public class fileWriter {
 
 
     //Quiz retriever:to get the quiz that has to be written inside a file
-    public ResultSet retriveQuiz(String qname) throws SQLException, InterruptedException {
+    private ResultSet retriveQuiz(String qname) throws SQLException, InterruptedException {
         var connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "");
         try {
             PreparedStatement statement = connection.prepareStatement("Select * from " + qname );

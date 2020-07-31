@@ -8,7 +8,7 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class questionsEdit {
-    public void questionByTopics(String topic) throws SQLException, InterruptedException {
+    protected void questionByTopics(String topic) throws SQLException, InterruptedException {
         Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "");
         try {
 //            System.out.println("insert into questions(topic, label, difficulty) " +
@@ -158,22 +158,29 @@ public class questionsEdit {
 
     }
 
-    public options optionacceptor() {
+    public options optionacceptor() throws InterruptedException {
         options op = new options();
         Scanner kb = new Scanner(System.in);
         int j = 1;
-        System.out.println("Enter options:");
-        System.out.print("[" + j++ + "]");
-        op.setO1(kb.nextLine());
-        System.out.print("[" + j++ + "]");
-        op.setO2(kb.nextLine());
-        System.out.print("[" + j++ + "]");
-        op.setO3(kb.nextLine());
-        System.out.print("[" + j++ + "]");
-        op.setO4(kb.nextLine());
-        System.out.print("ans=");
-        op.setAns(Integer.parseInt(kb.nextLine()));
-        return op;
+        try {
+            System.out.println("Enter options:");
+            System.out.print("[" + j++ + "]");
+            op.setO1(kb.nextLine());
+            System.out.print("[" + j++ + "]");
+            op.setO2(kb.nextLine());
+            System.out.print("[" + j++ + "]");
+            op.setO3(kb.nextLine());
+            System.out.print("[" + j++ + "]");
+            op.setO4(kb.nextLine());
+            System.out.print("ans=");
+            op.setAns(kb.nextInt());
+            return op;
+        }
+        catch (Exception s){
+            System.out.println("Answer should be an int[1,2,3,4]");
+            Thread.sleep(2000);
+            return null;
+        }
     }
 
 }

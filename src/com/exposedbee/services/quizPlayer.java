@@ -12,7 +12,7 @@ public class quizPlayer {
         getquestion(qname,sname);
     }
 
-    private boolean getquestion(String qname,String sname){
+    private void getquestion(String qname, String sname){
         try{
             ResultSet rs=retriveQuiz(qname);
             int count=1;
@@ -28,10 +28,9 @@ public class quizPlayer {
                     "\nYou Scored="+result);
             Thread.sleep(2000);
         }
-        catch (Exception s){
+        catch (Exception ignored){
 
         }
-        return false;
     }
 
     public ResultSet retriveQuiz(String qname) throws SQLException, InterruptedException {

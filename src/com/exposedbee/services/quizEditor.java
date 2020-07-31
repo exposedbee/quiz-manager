@@ -1,6 +1,5 @@
 package com.exposedbee.services;
 
-import com.exposedbee.dataModels.quizTopicHolder;
 import com.exposedbee.dataModels.quizTracker;
 
 import java.sql.*;
@@ -15,7 +14,7 @@ public class quizEditor {
 //            System.out.println("insert into questions(topic, label, difficulty) " +
 //                    "values('"+temp.topic+"','"+temp.label+"',"+temp.level+")");
             PreparedStatement statement = connection.prepareStatement("drop table "+qname);
-            int rs = statement.executeUpdate();
+            statement.executeUpdate();
             System.out.println("Quiz Removed");
             quizTracker qt1=new quizTracker();
             quiz t1=new quiz();
@@ -27,14 +26,14 @@ public class quizEditor {
             System.out.println("Quiz not present");
         }
     }
-    public void quizGenerator(String first) throws SQLException {
+    private void quizGenerator(String first) throws SQLException {
         Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "");
         try {
 //            System.out.println("insert into questions(topic, label, difficulty) " +
 //                    "values('"+temp.topic+"','"+temp.label+"',"+temp.level+")");
-            System.out.println(first);
+//            System.out.println(first);
             PreparedStatement statement = connection.prepareStatement(first);
-            int rs = statement.executeUpdate();
+            int r=statement.executeUpdate();
 
         }
         catch (SQLException se){
@@ -57,11 +56,11 @@ public class quizEditor {
     }
 
     private String generatetopic(Stack<String> topics) {
-        String t = "topic= '"+topics.pop()+"' ";
+        StringBuilder t = new StringBuilder("topic= '" + topics.pop() + "' ");
         for (String temp : topics) {
-            t += "or topic='" + temp + "'";
+            t.append("or topic='").append(temp).append("'");
         }
-        return t;
+        return t.toString();
     }
     private String generatefirst(String qname, Stack<String> topics){
         int choice = 0, qlength = 0;
